@@ -1,0 +1,19 @@
+{
+  "name": "opentok-token-cli",
+  "version": "1.0.0",
+  "description": "CLI to generate a JWT token given an apiKey and secret",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "opentok-token-cli": "./cmd.js"
+  },
+  "author": "Marcio Affonso <mads@tokbox.com>",
+  "license": "MIT",
+  "dependencies": {
+    "args": "0.0.3",
+    "jsonwebtoken": "^8.0.1",
+    "opentok": "^2.2.5"
+  }
+}
