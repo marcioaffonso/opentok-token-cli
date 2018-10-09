@@ -2,7 +2,6 @@
 
 const args = require('args');
 const { generateToken } = require('opentok-jwt');
-
 const options = args.Options.parse([{
   name: 'apikey',
   shortName: 'a',
@@ -28,7 +27,7 @@ const options = args.Options.parse([{
   help: 'Optional environment parameter "prod", "dev", "rel" or API URL',
 }]);
 const opts = args.parser(process.argv).parse(options);
-const { apiKey, secret, issuerType } = opts;
+const { apikey: apiKey, secret, issuerType } = opts;
 
 function errorMessage(err) {
   if (err) {
