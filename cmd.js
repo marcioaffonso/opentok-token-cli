@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const args = require('args'),
-  jwt = require('jsonwebtoken'),
+  { generateToken } = require('opentok-jwt'),
   options = args.Options.parse([{
     name: 'apikey',
     shortName: 'a',
@@ -56,18 +56,8 @@ if (opts.env !== 'prod') {
   opentok = new OpenTok(apiKey, secret);
 }
 
-const token = generateToken(apiKey, secret, issuerType);
+const token = generateToken(apiKey, secret, issuerType, opt.expires);
 outputResults(token);
-
-function generateToken(apiKey, secret, issuerType) {
-  const currentTime = Math.floor(new Date() / 1000);
-  return jwt.sign({
-    iss: apiKey,
-    ist: issuerType,
-    iat: currentTime,
-    exp: opts.expires || currentTime + (30 * 24 * 60 * 60), // in 30 days
-  }, secret);
-}
 
 function outputResults(token) {
   console.info('token: ', token);

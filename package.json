@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "args": "0.0.3",
-    "jsonwebtoken": "^8.0.1",
-    "opentok": "^2.2.5"
+    "opentok": "^2.2.5",
+    "opentok-jwt": "^0.1.2"
   }
 }
